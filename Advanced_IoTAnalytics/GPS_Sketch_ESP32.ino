@@ -9,10 +9,10 @@
 #include <WiFiClientSecure.h>
 #include <PubSubClient.h> // install with Library Manager, I used v2.6.0
 
-const char* ssid = "YOUR-WIFI-NETWORK";
-const char* password = "YOUR-WIFI-PASSWORD";
+const char* ssid = "TE-DB";
+const char* password = "A9yb&3793RR$";
 
-const char* awsEndpoint = "YOUR-AWS-REGIONAL-ENDPOINT.amazonaws.com"; //found in 'Settings' in AWS IoT Core 
+const char* awsEndpoint = "a1ypprxhwj7wh3-ats.iot.us-east-1.amazonaws.com"; //found in 'Settings' in AWS IoT Core 
 
 // Update the two certificate strings below. Paste in the text of your AWS 
 // device certificate and private key. Add a quote character at the start

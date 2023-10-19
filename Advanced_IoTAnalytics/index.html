@@ -65,7 +65,8 @@
         var x = new XMLHttpRequest();
 
         // API Gateway  ////
-        x.open("GET", "YOUR-API-GATEWAY-DEPLOYMENT-ENDPOINT-HERE", true);
+        ///Chaz Edit
+        x.open("GET", "https://xlzzjtr9bj.execute-api.us-east-1.amazonaws.com/DeployA", true);
         ///----------------------////
         x.onreadystatechange = function () {
           if (x.readyState == 4 && x.status == 200) {

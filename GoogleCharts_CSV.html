@@ -9,7 +9,8 @@
   
 $(document).ready(function(){
   $("button").click(function(){
-$.get( "https://<YOUR_DATA_BUCKET>.s3-<YOUR_REGION>.amazonaws.com/<YOUR-FOLDER>/<YOUR-DATA_OBJECT>.csv", function( data ) {
+    $.get("https://chazbucket1.s3.amazonaws.com/fyfile/myiot.csv", function (data) {
+//CHAZ$.get( "https://<YOUR_DATA_BUCKET>.s3-<YOUR_REGION>.amazonaws.com/<YOUR-FOLDER>/<YOUR-DATA_OBJECT>.csv", function( data ) {
 		//alert( "Data Loaded: " + data );
 		
 		var temperature = data.match( /(?<=^")[0-9.]+/gm );

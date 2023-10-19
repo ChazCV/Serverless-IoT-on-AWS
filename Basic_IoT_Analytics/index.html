@@ -7,7 +7,8 @@
 
     $(document).ready(function () {
       $("button").click(function () {
-        $.get("https://<YOUR-BUCKET-NAME>.s3.amazonaws.com/<YOUR-PATH>/<YOUR-DATA-FILE>.csv", function (data) {
+        $.get("https://chazbucket1.s3.amazonaws.com/fyfile/myiot.csv", function (data) {
+        //CHAZ$.get("https://<YOUR-BUCKET-NAME>.s3.amazonaws.com/<YOUR-PATH>/<YOUR-DATA-FILE>.csv", function (data) {
 
           data = data.replace(/"/g, '').split('\n');
           let allRecArr = data.map(x => {
