@@ -1,5 +1,5 @@
 
-$(function() {    // all jquery should be in "$(function() { }) document ready function"
+// $(function() {    // all jquery should be in "$(function() { }) document ready function"
     var uptime = new Array();
     var humidity = new Array();
     var temperature = new Array();
@@ -7,7 +7,7 @@ $(function() {    // all jquery should be in "$(function() { }) document ready f
    // Start by extracting YOUR FOLDER/ url from YOUR s3 bucket
     $.ajax({
         type     : "GET",
-        url      : "https://<YOUR-IOT-DATA-BUCKET-NAME>.s3.amazonaws.com/",
+        url      : "https://ours3bucketsection6.s3.amazonaws.com/",
         dataType : "xml",
         success  : function(xmlData){
             var url = "";
@@ -20,10 +20,10 @@ $(function() {    // all jquery should be in "$(function() { }) document ready f
                 url = keys[i].childNodes[0].nodeValue;
     
                 // Find your locate your nested folder string 
-                pos = url.search("<Your-Nested-Folder>")  //mine was folder2
+                pos = url.search("folder2")  //mine was folder2
                 if(pos > -1) {
                     // Detect nested folder with json file
-                     if(url.replace("<YOUR-fOLDER>/", "") != "")  //mine was folder 2
+                     if(url.replace("folder2/", "") != "")  //mine was folder 2
                         parseJson(url)
                 }
             }
@@ -38,7 +38,7 @@ $(function() {    // all jquery should be in "$(function() { }) document ready f
     var parseJson = function(url) {
         $.ajax({
             type : "GET",
-            url : "https://<YOUR-IOT-DATA-BUCKET-NAME>.s3.amazonaws.com/" + url,
+            url : "https://ours3bucketsection6.s3.amazonaws.com/" + url,
             dataType : "json",
             async:false,
             success : function(jsonFile) {
@@ -55,4 +55,4 @@ $(function() {    // all jquery should be in "$(function() { }) document ready f
             }
         })
     }
-})
+// })

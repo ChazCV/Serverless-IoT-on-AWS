@@ -59,7 +59,7 @@ let myChart = Highcharts.chart('container1', {
 let getWheatherData = function () {
     $.ajax({
         type: "GET",
-        url: "<Insert-Your-IoT-Data-Bucket-With-Key-Here>",  //example: https://mydatabucket.s3.amazonaws.com/myKey"
+        url: "https://sbucketsection5.s3.amazonaws.com/myKey",  //example: https://mydatabucket.s3.amazonaws.com/myKey"
         dataType: "json",
         async: false,
         success: function (data) {
@@ -74,11 +74,11 @@ let getWheatherData = function () {
 
 let drawChart = function (data) {
 
-    let { humidity, temperature, timestamps } = data;
+    let { humidity, temperature, timestamp } = data;
 
     humArr.push(Number(humidity));
     tempArr.push(Number(temperature));
-    upArr.push(Number(timestamps));
+    upArr.push(Number(timestamp));
     
     myChart.series[0].setData(humArr , true)
     myChart.series[1].setData(tempArr , true)
