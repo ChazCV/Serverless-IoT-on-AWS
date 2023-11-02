@@ -7,7 +7,7 @@ var parseText = function(url) {
     var values ={ "uptime":"", "temperature":"", "humidity":"" };
     $.ajax({
         type     : "GET",
-        url      : "https://<YOUR-BUCKET-NAME-HERE>.s3.amazonaws.com/" + url, //you will ned to addyour region to url too ->
+        url      : "https://kinesisbuckets7.s3.amazonaws.com/" + url, //you will ned to addyour region to url too ->
         async : false,                                                        //if your base bucket region != your home region
         dataType : "text",
         success  : function(txtFile){
@@ -59,7 +59,7 @@ var parseToJSONArray = function(txtFile) {
 // Start by extracting key/ url from s3 bucket
 $.ajax({
     type     : "GET",
-    url      : "https://<YOUR-BUCKET-NAME-HERE>.s3.amazonaws.com/",  //you will ned to addyour region to url too 
+    url      : "https://kinesisbuckets7.s3.amazonaws.com/",  //you will ned to addyour region to url too 
     async : false,                                                   //if your base bucket region != your home region
     dataType : "xml",
     success  : function(xmlData, values){

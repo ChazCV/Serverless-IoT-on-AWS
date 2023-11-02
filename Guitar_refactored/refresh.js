@@ -18,15 +18,15 @@
 
 
 // Initialize the Amazon Cognito credentials provider
-AWS.config.region = '<Your-Region>'; // Region
+AWS.config.region = 'us-east-1'; // Region
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'us-east-1:2e1bdxxx-cxxx-4xxx-axxx-182xxxxx769',
+    IdentityPoolId: 'us-east-1:5a35685e-b20d-4f1c-adc2-eef32142bfe0',
 });
 
 var dynamodb = new AWS.DynamoDB();
 var datumVal = new Date() - 86400000;
 var params = { 
-                TableName: '<Your-DynamoDB-Table-Name-Here>',  
+                TableName: 's8DDBTable',  
                 KeyConditionExpression: '#id = :iottopic and #ts >= :datum',
                 ExpressionAttributeNames: {
                   "#id": "id",
@@ -77,7 +77,7 @@ var tinit = {
 var humiditygraph = new Chart.Line(hctx, {data: hinit, options: options});$(function() {
   getData();
   $.ajaxSetup({ cache: false });
-  setInterval(getData, 300000);
+  setInterval(getData, 50000);
 });/* Makes a scan of the DynamoDB table to set a data object for the chart */
 function getData() {
   dynamodb.query(params, function(err, data) {

@@ -1,10 +1,10 @@
 
-// $(function() {    // all jquery should be in "$(function() { }) document ready function"
+$(function() {    // all jquery should be in "$(function() { }) document ready function"
     var uptime = new Array();
     var humidity = new Array();
     var temperature = new Array();
-    
-   // Start by extracting YOUR FOLDER/ url from YOUR s3 bucket
+
+    // Start by extracting YOUR FOLDER/ url from YOUR s3 bucket
     $.ajax({
         type     : "GET",
         url      : "https://ours3bucketsection6.s3.amazonaws.com/",
@@ -18,22 +18,22 @@
 
             for(i=0; i < keys.length; i++) {
                 url = keys[i].childNodes[0].nodeValue;
-    
+
                 // Find your locate your nested folder string 
                 pos = url.search("folder2")  //mine was folder2
                 if(pos > -1) {
                     // Detect nested folder with json file
-                     if(url.replace("folder2/", "") != "")  //mine was folder 2
+                        if(url.replace("folder2/", "") != "")  //mine was folder 2
                         parseJson(url)
                 }
             }
             // loadChart(uptime, temperature, humidity)
         },
         error    : function(){
-             alert("Could not retrieve XML file.");
+                alert("Could not retrieve XML file.");
         }
     });
-    
+
     // Parse JSON files
     var parseJson = function(url) {
         $.ajax({
@@ -55,4 +55,4 @@
             }
         })
     }
-// })
+})

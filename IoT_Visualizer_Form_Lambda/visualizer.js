@@ -23,6 +23,12 @@ var loadChart = function(uptime, temperature, humidity) {
                 }
             ]
         },
-        options: {}
+        options: {
+            title: {
+                display: true,
+                text: 'Uptime',
+                position: 'bottom'
+            },
+        }
     });
 }
