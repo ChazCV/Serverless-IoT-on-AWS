@@ -7,10 +7,10 @@
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:*",
-            "Resource": "arn:aws:s3:::<YOUR-S3-BUCKET-NAME-HERE>/*",
+            "Resource": "arn:aws:s3:::section9s3/*",
             "Condition": {
                 "IpAddress": {
-                    "aws:SourceIp": "<YOUR-IP-ADDRESS-HERE>/24"
+                    "aws:SourceIp": "66.61.219.74/24"
                 }
             }
         }

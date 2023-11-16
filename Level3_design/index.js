@@ -9,7 +9,7 @@ exports.handler = function (event, context, callback) {
     let responseData = [];
     let promiseArr = [];
     var params = {
-        Bucket: "<YOUR-BUCKET-NAME>",
+        Bucket: "ours3bucketsection6",
         MaxKeys: 50
     };
     s3.listObjects(params, (err, objects) => {
@@ -20,13 +20,13 @@ exports.handler = function (event, context, callback) {
             // console.log(contents);
             for (let index = 0; index < contents.length; index++) {
                 const element = contents[index];
-                const regex = /<YOUR-KEY-FOLDER-NAME>*/g;  // YOUR KEY/FOLDER NAME FOLLOWED BY a '*'
+                const regex = /folder2*/g;  // YOUR KEY/FOLDER NAME FOLLOWED BY a '*'
                 if (regex.test(element.Key)) {
                     var params1 = {
-                        Bucket: "<YOUR-BUCKET-NAME>",
+                        Bucket: "ours3bucketsection6",
                         Key: element.Key
                     };
-                    if (element.Key !== '<YOUR-KEY-FOLDER-NAME>/') {
+                    if (element.Key !== 'folder2/') {
                         promiseArr.push(new Promise((resolve, reject) => {
                             s3.getObject(params1, (err, data) => {
                                 if (err) {

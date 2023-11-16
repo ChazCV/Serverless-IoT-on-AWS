@@ -81,7 +81,7 @@
 
         // API Gateway  ////
         x.open("GET", "<YOUR-API-ENDPOINT-HERE>", true);
-		x.setRequestHeader("x-api-key", APIKeyVar)
+		    x.setRequestHeader("x-api-key", APIKeyVar)
         ///----------------------////
         x.onreadystatechange = function () {
           if (x.readyState == 4 && x.status == 200) {
