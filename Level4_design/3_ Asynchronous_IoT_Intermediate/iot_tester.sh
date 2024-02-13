@@ -52,3 +52,5 @@ for (( i = 1; i <=$iterations; i++)) {
 
   sleep $wait
 }
+
+aws iot-data publish --topic "inTopic" --cli-binary-format raw-in-base64-out --payload "{\"temperature\":45,\"humidity\":52}" --profile 'default' --region 'us-east-1'
